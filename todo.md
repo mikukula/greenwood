@@ -9,4 +9,4 @@
 - [ ] Make platform independent
 
 ## Resources
-- [ ] Translate logo to 
+- [ ] Translate logo to SVG
