@@ -1,0 +1,6 @@
+QWidget {
+    font-size: 25px;
+}
+QLineEdit {
+    height: 50px;
+}

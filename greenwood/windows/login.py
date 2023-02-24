@@ -18,7 +18,7 @@ class LoginWindow(QWidget):
         super().__init__()
         self.setWindowTitle('Login')
         self.setWindowIcon(QIcon(''))
-        self.window_width, self.window_height = 600, 200
+        self.window_width, self.window_height = 600, 600
         self.setFixedSize(self.window_width, self.window_height)
 
         layout = QGridLayout()
@@ -85,16 +85,10 @@ if __name__ == '__main__':
     # QApplication.setAttribute(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     
     app = QApplication(sys.argv)
-    app.setStyleSheet('''
-        QWidget {
-            font-size: 25px;
-        }
-        QLineEdit {
-            height: 200px;
-        }
-    ''')
     
     loginWindow = LoginWindow()
+    with open("login.css","r") as file:
+        app.setStyleSheet(file.read())
     loginWindow.show()
 
     try:
