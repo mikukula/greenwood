@@ -5,8 +5,9 @@
 - [ ] Remove need for IP providing. Client capable database connection.
 
 ## PDF Generator
-- [ ] Change Template
 - [ ] Make platform independent
+- [ ] Make Class
+- [ ] File saved in user specified location
 
 ## Resources
 - [ ] Translate logo to SVG
