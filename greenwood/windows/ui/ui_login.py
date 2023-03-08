@@ -9,14 +9,14 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(400, 355)
+class Ui_logInDialog(object):
+    def setupUi(self, logInDialog):
+        logInDialog.setObjectName("logInDialog")
+        logInDialog.resize(400, 355)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\mikuk\\Documents\\yr2gp\\greenwood\\greenwood\\windows\\ui\\../assets/greenwood_logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        Dialog.setWindowIcon(icon)
-        self.formLayoutWidget = QtWidgets.QWidget(parent=Dialog)
+        logInDialog.setWindowIcon(icon)
+        self.formLayoutWidget = QtWidgets.QWidget(parent=logInDialog)
         self.formLayoutWidget.setGeometry(QtCore.QRect(60, 90, 281, 131))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
@@ -47,28 +47,28 @@ class Ui_Dialog(object):
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEdit_2)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.formLayout.setItem(3, QtWidgets.QFormLayout.ItemRole.SpanningRole, spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(parent=Dialog)
+        self.pushButton = QtWidgets.QPushButton(parent=logInDialog)
         self.pushButton.setGeometry(QtCore.QRect(100, 240, 196, 28))
         self.pushButton.setObjectName("pushButton")
-        self.label_3 = QtWidgets.QLabel(parent=Dialog)
+        self.label_3 = QtWidgets.QLabel(parent=logInDialog)
         self.label_3.setGeometry(QtCore.QRect(100, 280, 201, 61))
         self.label_3.setStyleSheet("color: #006D2C;")
         self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(parent=Dialog)
+        self.label_4 = QtWidgets.QLabel(parent=logInDialog)
         self.label_4.setGeometry(QtCore.QRect(130, 20, 141, 51))
         self.label_4.setText("")
         self.label_4.setPixmap(QtGui.QPixmap("c:\\Users\\mikuk\\Documents\\yr2gp\\greenwood\\greenwood\\windows\\ui\\../assets/logo_text.png"))
         self.label_4.setObjectName("label_4")
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(logInDialog)
+        QtCore.QMetaObject.connectSlotsByName(logInDialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, logInDialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Log in"))
-        self.label.setText(_translate("Dialog", "Email"))
-        self.label_2.setText(_translate("Dialog", "Password"))
-        self.pushButton.setText(_translate("Dialog", "Log In"))
-        self.label_3.setText(_translate("Dialog", "Greenwood software is invite only.\n"
+        logInDialog.setWindowTitle(_translate("logInDialog", "Log in"))
+        self.label.setText(_translate("logInDialog", "Email"))
+        self.label_2.setText(_translate("logInDialog", "Password"))
+        self.pushButton.setText(_translate("logInDialog", "Log In"))
+        self.label_3.setText(_translate("logInDialog", "Greenwood software is invite only.\n"
 "Please log in with credentials\n"
 "provided by your organisation."))
