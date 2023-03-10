@@ -35,14 +35,14 @@ class Ui_MainWindow(object):
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
-        self.pushButton = QtWidgets.QPushButton(parent=self.frame)
-        self.pushButton.setEnabled(True)
-        self.pushButton.setGeometry(QtCore.QRect(1230, 0, 41, 31))
+        self.loginButton = QtWidgets.QPushButton(parent=self.frame)
+        self.loginButton.setEnabled(True)
+        self.loginButton.setGeometry(QtCore.QRect(1230, 0, 41, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.pushButton.setFont(font)
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.pushButton.setStyleSheet("QPushButton:hover{\n"
+        self.loginButton.setFont(font)
+        self.loginButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.loginButton.setStyleSheet("QPushButton:hover{\n"
 "    text-decoration: underline solid;\n"
 "    color: #06D036;\n"
 "}\n"
@@ -50,9 +50,9 @@ class Ui_MainWindow(object):
 "QPushButton{\n"
 "    border-radius: 48px;\n"
 "}")
-        self.pushButton.setCheckable(False)
-        self.pushButton.setFlat(True)
-        self.pushButton.setObjectName("pushButton")
+        self.loginButton.setCheckable(False)
+        self.loginButton.setFlat(True)
+        self.loginButton.setObjectName("loginButton")
         self.pushButton_2 = QtWidgets.QPushButton(parent=self.frame)
         self.pushButton_2.setEnabled(True)
         self.pushButton_2.setGeometry(QtCore.QRect(30, 40, 201, 41))
@@ -77,6 +77,21 @@ class Ui_MainWindow(object):
         self.pushButton_2.setDefault(False)
         self.pushButton_2.setFlat(True)
         self.pushButton_2.setObjectName("pushButton_2")
+        self.inviteButton = QtWidgets.QPushButton(parent=self.frame)
+        self.inviteButton.setGeometry(QtCore.QRect(1172, 0, 51, 28))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.inviteButton.setFont(font)
+        self.inviteButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.inviteButton.setStyleSheet("QPushButton:hover{\n"
+"    text-decoration: underline solid;\n"
+"    color: #06D036;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"    border-radius: 48px;\n"
+"}")
+        self.inviteButton.setObjectName("inviteButton")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(210, 120, 81, 31))
         font = QtGui.QFont()
@@ -131,6 +146,10 @@ class Ui_MainWindow(object):
         self.audioUploadField.setPixmap(QtGui.QPixmap("c:\\Users\\mikuk\\Documents\\yr2gp\\greenwood\\greenwood\\windows\\ui\\../assets/upload.png"))
         self.audioUploadField.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.audioUploadField.setObjectName("audioUploadField")
+        self.fileButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.fileButton.setGeometry(QtCore.QRect(1010, 460, 93, 28))
+        self.fileButton.setStyleSheet("")
+        self.fileButton.setObjectName("fileButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1281, 26))
@@ -146,9 +165,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Greenwood"))
-        self.pushButton.setText(_translate("MainWindow", "Login"))
+        self.loginButton.setText(_translate("MainWindow", "Login"))
         self.pushButton_2.setText(_translate("MainWindow", "View Reports"))
+        self.inviteButton.setText(_translate("MainWindow", "Invite"))
         self.label.setText(_translate("MainWindow", "Location"))
         self.label_2.setText(_translate("MainWindow", "Date"))
         self.label_3.setText(_translate("MainWindow", "Tags"))
         self.label_4.setText(_translate("MainWindow", "Upload Audio"))
+        self.fileButton.setText(_translate("MainWindow", "Choose file"))

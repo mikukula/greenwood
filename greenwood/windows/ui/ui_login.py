@@ -47,9 +47,9 @@ class Ui_logInDialog(object):
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEdit_2)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.formLayout.setItem(3, QtWidgets.QFormLayout.ItemRole.SpanningRole, spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(parent=logInDialog)
-        self.pushButton.setGeometry(QtCore.QRect(100, 240, 196, 28))
-        self.pushButton.setObjectName("pushButton")
+        self.logInButton = QtWidgets.QPushButton(parent=logInDialog)
+        self.logInButton.setGeometry(QtCore.QRect(100, 240, 196, 28))
+        self.logInButton.setObjectName("logInButton")
         self.label_3 = QtWidgets.QLabel(parent=logInDialog)
         self.label_3.setGeometry(QtCore.QRect(100, 280, 201, 61))
         self.label_3.setStyleSheet("color: #006D2C;")
@@ -68,7 +68,7 @@ class Ui_logInDialog(object):
         logInDialog.setWindowTitle(_translate("logInDialog", "Log in"))
         self.label.setText(_translate("logInDialog", "Email"))
         self.label_2.setText(_translate("logInDialog", "Password"))
-        self.pushButton.setText(_translate("logInDialog", "Log In"))
+        self.logInButton.setText(_translate("logInDialog", "Log In"))
         self.label_3.setText(_translate("logInDialog", "Greenwood software is invite only.\n"
 "Please log in with credentials\n"
 "provided by your organisation."))

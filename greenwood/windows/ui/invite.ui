@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Log in</string>
+   <string>Invite</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -91,7 +91,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="invite">
    <property name="geometry">
     <rect>
      <x>100</x>

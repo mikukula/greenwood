@@ -47,9 +47,9 @@ class Ui_Dialog(object):
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.lineEdit_2)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.formLayout.setItem(3, QtWidgets.QFormLayout.ItemRole.SpanningRole, spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(parent=Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(100, 240, 196, 28))
-        self.pushButton.setObjectName("pushButton")
+        self.invite = QtWidgets.QPushButton(parent=Dialog)
+        self.invite.setGeometry(QtCore.QRect(100, 240, 196, 28))
+        self.invite.setObjectName("invite")
         self.label_3 = QtWidgets.QLabel(parent=Dialog)
         self.label_3.setGeometry(QtCore.QRect(100, 280, 201, 61))
         self.label_3.setStyleSheet("color: #006D2C;")
@@ -65,10 +65,10 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Log in"))
+        Dialog.setWindowTitle(_translate("Dialog", "Invite"))
         self.label.setText(_translate("Dialog", "Email"))
         self.label_2.setText(_translate("Dialog", "Password"))
-        self.pushButton.setText(_translate("Dialog", "Invite Member"))
+        self.invite.setText(_translate("Dialog", "Invite Member"))
         self.label_3.setText(_translate("Dialog", "Greenwood software is invite only.\n"
 "Please provide credentials for\n"
 "your member."))

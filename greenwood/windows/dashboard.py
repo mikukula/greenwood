@@ -1,8 +1,9 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QDialog, QLabel    
+from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QDialog, QLabel, QFileDialog    
 from PyQt6 import uic, QtCore
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtSql import QSqlDatabase
 from dashboard_manager import DashboardManager
-from PyQt6.QtCore import Qt
+from pathlib import Path
 import sys
 
 class Dashboard(QMainWindow):
@@ -24,15 +25,64 @@ class Dashboard(QMainWindow):
         self.audioUploadField.setObjectName("audioUploadField")
 
         ###########################################################
+        self.ui.fileButton.clicked.connect(self.chooseFile)
+        self.ui.loginButton.clicked.connect(self.openLoginScreen)
+        self.ui.inviteButton.clicked.connect(self.openInviteScreen)
+
         self.show()
+        self.openLoginScreen()
+        
+        connect()
+
+    def openLoginScreen(self):
+
         self.loginScreen = LogIn(parent=self)
+
+    def openInviteScreen(self):
+
+        self.inviteScreen = InviteScreen(parent=self)
+
+    def chooseFile(self):
+
+        home_dir = str(Path.home())
+        fname = QFileDialog.getOpenFileName(self, 'Open file', home_dir)
+        print(fname[0])
+
 
 class LogIn(QDialog):
     def __init__(self, parent=None):
         super(LogIn, self).__init__(parent)
         self.ui = uic.loadUi("ui\login.ui", self)
-        self.setWindowFlag(QtCore.Qt.WindowType.WindowStaysOnTopHint);
+        self.parent = parent
+
+        self.ui.logInButton.clicked.connect(self.loggedIn)
+
+        parent.setEnabled(False)
+        self.setEnabled(True)
         self.show()
+
+    def loggedIn(self):
+
+        self.parent.setEnabled(True)
+        self.close()
+
+
+class InviteScreen(QDialog):
+    def __init__(self, parent = None):
+        super(InviteScreen, self).__init__(parent)
+        self.ui = uic.loadUi("ui\invite.ui", self)
+        self.parent = parent
+
+        self.ui.invite.clicked.connect(self.invited)
+
+        parent.setEnabled(False)
+        self.setEnabled(True)
+        self.show()
+
+    def invited(self):
+
+        self.parent.setEnabled(True)
+        self.close()
 
 class DropBox(QLabel):
     def __init__(self, parent=None):
@@ -42,37 +92,45 @@ class DropBox(QLabel):
     def dragEnterEvent(self, event):
 
         if (event.mimeData().hasUrls() and
-             self.__isExtension(".wav", event)):
+            isExtension(".wav", event.mimeData().text())):
            event.accept()
-           print("can enter")
         else:
            event.ignore()
 
     def dragMoveEvent(self, event):
         
         if (event.mimeData().hasUrls() and 
-            self.__isExtension(".wav", event)):
+            isExtension(".wav", event.mimeData().text())):
            event.accept()
-           print("can move")
+
         else:
            event.ignore()
         
     def dropEvent(self, event):
         if (event.mimeData().hasUrls() and
-            self.__isExtension(".wav", event)):
+            isExtension(".wav", event.mimeData().text())):
            event.accept()
            print("can drop")
         else:
            event.ignore()
     
-    def __isExtension(self, extension, event):
+    
+#extension checking
+def isExtension(extension, filePath):
 
-        if(event.mimeData().text()[-4:] == extension):
-            return True
-        else:
-            return False
-
-
+    if(filePath[-4:] == extension):
+        return True
+    else:
+        return False
+    
+#database
+def connect():
+    db = QSqlDatabase.addDatabase("QSQLIte", "(description= (retry_count=0)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-singapore-1.oraclecloud.com))(connect_data=(service_name=g6c4c0c6d559479_greenwood_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))")
+    db.setHostName("bigblue")
+    db.setDatabaseName("flightdb")
+    db.setUserName("acarlson")
+    db.setPassword("1uTbSbAs")
+    ok = db.open()
         
 ####### set up
 app = QApplication(sys.argv)
@@ -81,6 +139,5 @@ manager = DashboardManager(UIWindow)
 manager.addToComboBox(UIWindow.ui.locationBox, "test1")
 
 ####### drop box setup
-#def dragEnterEvent(UIWindow.ui)
 
 app.exec()

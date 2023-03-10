@@ -66,7 +66,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="loginButton">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -158,6 +158,37 @@ QPushButton{
      </property>
      <property name="flat">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="inviteButton">
+     <property name="geometry">
+      <rect>
+       <x>1172</x>
+       <y>0</y>
+       <width>51</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover{
+	text-decoration: underline solid;
+	color: #06D036;
+}
+
+QPushButton{
+	border-radius: 48px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Invite</string>
      </property>
     </widget>
    </widget>
@@ -322,6 +353,22 @@ QPushButton{
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fileButton">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>460</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Choose file</string>
     </property>
    </widget>
   </widget>
